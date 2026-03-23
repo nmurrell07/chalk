@@ -69,6 +69,10 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 		return 0;
 	}
 
+	if (forceColor > 0) {
+		return forceColor;
+	}
+
 	if (sniffFlags) {
 		if (hasFlag('color=16m')
 			|| hasFlag('color=full')
